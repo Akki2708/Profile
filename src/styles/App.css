@@ -1,0 +1,34 @@
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.app-scroll-container {
+  min-height: 100vh;
+  background: #f7f7f7;
+  font-family: "Segoe UI", Arial, sans-serif;
+  scroll-behavior: smooth;
+  padding-bottom: 32px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .app-scroll-container {
+    padding-bottom: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-scroll-container {
+    padding-bottom: 8px;
+  }
+}

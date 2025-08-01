@@ -1,0 +1,108 @@
+/* Stats.css */
+.stats-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #fff;
+  padding: 18px 16px 10px 16px;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+  margin: 16px 0;
+  gap: 16px;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.stats-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 80px;
+  margin-bottom: 10px;
+  flex: 1;
+  text-align: center;
+}
+
+.stats-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+.stats-label {
+  font-size: 1.1rem;
+  color: #888;
+  margin-top: 2px;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+.loader {
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.1rem;
+  color: #888;
+  width: 100%;
+}
+
+/* Mobile responsive design */
+@media (max-width: 768px) {
+  .stats-section {
+    padding: 16px 12px 8px 12px;
+    gap: 12px;
+    margin: 12px 0;
+  }
+
+  .stats-box {
+    min-width: 70px;
+    margin-bottom: 8px;
+  }
+
+  .stats-value {
+    font-size: 1.8rem;
+  }
+
+  .stats-label {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-section {
+    padding: 14px 8px 6px 8px;
+    gap: 8px;
+    margin: 8px 0;
+    border-radius: 12px;
+  }
+
+  .stats-box {
+    min-width: 60px;
+    margin-bottom: 6px;
+  }
+
+  .stats-value {
+    font-size: 1.6rem;
+  }
+
+  .stats-label {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .stats-section {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .stats-box {
+    min-width: auto;
+    width: 100%;
+    margin-bottom: 0;
+  }
+}

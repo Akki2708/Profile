@@ -1,0 +1,145 @@
+/* CareTeam.css */
+.care-team-section {
+  background: #2196f3;
+  padding: 22px 16px 16px 16px;
+  text-align: center;
+  margin: 18px 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.care-team-heading {
+  color: #fff;
+  font-size: 1.18rem;
+  margin-bottom: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.team-members {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 32px;
+  width: 100%;
+}
+
+.team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 120px;
+  flex: 1;
+  max-width: 200px;
+}
+
+.team-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  margin-bottom: 8px;
+  object-fit: cover;
+}
+
+.team-role {
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 2px;
+  font-size: 1.08rem;
+  word-wrap: break-word;
+  text-align: center;
+}
+
+.team-name {
+  color: #e3f2fd;
+  font-weight: 400;
+  margin-bottom: 0;
+  font-size: 0.98rem;
+  word-wrap: break-word;
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* Mobile responsive design */
+@media (max-width: 768px) {
+  .care-team-section {
+    padding: 18px 12px 12px 12px;
+    margin: 12px 0;
+  }
+
+  .care-team-heading {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+
+  .team-members {
+    gap: 24px;
+  }
+
+  .team-member {
+    min-width: 100px;
+    max-width: 150px;
+  }
+
+  .team-avatar {
+    width: 64px;
+    height: 64px;
+  }
+
+  .team-role {
+    font-size: 1rem;
+  }
+
+  .team-name {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .care-team-section {
+    padding: 16px 8px 10px 8px;
+    margin: 8px 0;
+  }
+
+  .care-team-heading {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .team-members {
+    gap: 16px;
+  }
+
+  .team-member {
+    min-width: 80px;
+    max-width: 120px;
+  }
+
+  .team-avatar {
+    width: 56px;
+    height: 56px;
+    border-width: 2px;
+  }
+
+  .team-role {
+    font-size: 0.9rem;
+  }
+
+  .team-name {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .team-members {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .team-member {
+    min-width: auto;
+    max-width: none;
+  }
+}
