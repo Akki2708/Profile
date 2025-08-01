@@ -17,7 +17,8 @@ const DEMO_PROFILE_DATA = {
       city: "Mumbai",
       state: "Maharashtra",
       country: "India",
-      userImage: "https://media.licdn.com/dms/image/v2/D4D03AQGOuQhk51X1Vw/profile-displayphoto-crop_800_800/B4DZgoPRUbGgAM-/0/1753021751126?e=1756339200&v=beta&t=RQwIwTcQaE78V1_K4Il8HNNU5C6HE4SFqjTPdOxbl0U",
+      userImage:
+        "https://media.licdn.com/dms/image/v2/D4D03AQGOuQhk51X1Vw/profile-displayphoto-crop_800_800/B4DZgoPRUbGgAM-/0/1753021751126?e=1756339200&v=beta&t=RQwIwTcQaE78V1_K4Il8HNNU5C6HE4SFqjTPdOxbl0U",
       joinedSince: "2023",
       groupCount: "25",
       friendCount: "14700",
@@ -51,8 +52,10 @@ export const profileAPI = {
   // Get profile data from GOQii API
   fetchProfileData: async () => {
     try {
-      const response = await apiClient.get(API_CONFIG.ENDPOINTS.FETCH_GOQII_FRIEND);
-      
+      const response = await apiClient.get(
+        API_CONFIG.ENDPOINTS.FETCH_GOQII_FRIEND
+      );
+
       // Check if response has correct structure
       if (response.data && response.data.data && response.data.data.data) {
         return {
@@ -65,7 +68,7 @@ export const profileAPI = {
       }
     } catch (error) {
       console.error("Error fetching profile data:", error);
-      
+
       // Always return demo data when API fails
       return {
         success: true,
@@ -81,14 +84,18 @@ export const dataUtils = {
   // Format numbers (1,000 -> 1K, 1,000,000 -> 1M)
   formatNumber: (value) => {
     if (!value || value === "Loading...") return "0";
-    
+
     const numValue = parseFloat(value);
     if (isNaN(numValue)) return "0";
-    
+
     if (numValue >= FORMATTING.MILLION_THRESHOLD) {
-      return `${(numValue / FORMATTING.MILLION_THRESHOLD).toFixed(FORMATTING.DECIMAL_PLACES)}M`;
+      return `${(numValue / FORMATTING.MILLION_THRESHOLD).toFixed(
+        FORMATTING.DECIMAL_PLACES
+      )}M`;
     } else if (numValue >= FORMATTING.THOUSAND_THRESHOLD) {
-      return `${(numValue / FORMATTING.THOUSAND_THRESHOLD).toFixed(FORMATTING.DECIMAL_PLACES)}K`;
+      return `${(numValue / FORMATTING.THOUSAND_THRESHOLD).toFixed(
+        FORMATTING.DECIMAL_PLACES
+      )}K`;
     }
     return numValue.toString();
   },
@@ -96,14 +103,18 @@ export const dataUtils = {
   // Format step count
   formatSteps: (steps) => {
     if (!steps || steps === "Loading...") return "0";
-    
+
     const numSteps = parseInt(steps);
     if (isNaN(numSteps)) return "0";
-    
+
     if (numSteps >= FORMATTING.MILLION_THRESHOLD) {
-      return `${(numSteps / FORMATTING.MILLION_THRESHOLD).toFixed(FORMATTING.DECIMAL_PLACES)}M`;
+      return `${(numSteps / FORMATTING.MILLION_THRESHOLD).toFixed(
+        FORMATTING.DECIMAL_PLACES
+      )}M`;
     } else if (numSteps >= FORMATTING.THOUSAND_THRESHOLD) {
-      return `${(numSteps / FORMATTING.THOUSAND_THRESHOLD).toFixed(FORMATTING.DECIMAL_PLACES)}K`;
+      return `${(numSteps / FORMATTING.THOUSAND_THRESHOLD).toFixed(
+        FORMATTING.DECIMAL_PLACES
+      )}K`;
     }
     return numSteps.toString();
   },
@@ -128,4 +139,4 @@ export const dataUtils = {
   },
 };
 
-export default apiClient; 
+export default apiClient;

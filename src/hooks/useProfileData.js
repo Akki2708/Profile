@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { profileAPI, dataUtils } from "../services/api";
 import { MESSAGES } from "../constants";
+import { fetchGoqiiFriend } from "../apiservices/api";
 
 const useProfileData = () => {
   const [profileData, setProfileData] = useState(null);
@@ -12,10 +13,13 @@ const useProfileData = () => {
     try {
       setLoading(true);
       setError(null);
-      
-      const result = await profileAPI.fetchProfileData();
-      
-      if (result.success && result.data) {
+
+      // const result = await profileAPI.fetchProfileData();
+      const result = await fetchGoqiiFriend({});
+
+      console.log("API result:", result);
+
+      if (result.data) {
         setProfileData(result.data);
         setError(null);
       } else {
@@ -53,4 +57,4 @@ const useProfileData = () => {
   };
 };
 
-export default useProfileData; 
+export default useProfileData;

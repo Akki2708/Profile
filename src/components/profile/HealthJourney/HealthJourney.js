@@ -2,6 +2,7 @@ import React from "react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import { FaWalking } from "react-icons/fa";
+
 import "./HealthJourney.css";
 
 // Chart data
