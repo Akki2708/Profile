@@ -13,13 +13,12 @@ const useProfileData = () => {
     try {
       setLoading(true);
       setError(null);
+      // console.log("API Response:");
+      const result = await profileAPI.fetchProfileData();
+      // const result = await fetchGoqiiFriend({});
+      console.log("API Response:", result);
 
-      // const result = await profileAPI.fetchProfileData();
-      const result = await fetchGoqiiFriend({});
-
-      console.log("API result:", result);
-
-      if (result.data) {
+      if (result.success && result.data) {
         setProfileData(result.data);
         setError(null);
       } else {

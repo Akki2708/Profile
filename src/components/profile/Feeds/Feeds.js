@@ -6,9 +6,11 @@ const Feeds = () => {
     {
       id: 1,
       name: "Sharad",
-      avatar: "https://media.licdn.com/dms/image/v2/D4D03AQGOuQhk51X1Vw/profile-displayphoto-crop_800_800/B4DZgoPRUbGgAM-/0/1753021751126?e=1756339200&v=beta&t=RQwIwTcQaE78V1_K4Il8HNNU5C6HE4SFqjTPdOxbl0U",
+      avatar:
+        "https://media.licdn.com/dms/image/v2/D4D03AQGOuQhk51X1Vw/profile-displayphoto-crop_800_800/B4DZgoPRUbGgAM-/0/1753021751126?e=1756339200&v=beta&t=RQwIwTcQaE78V1_K4Il8HNNU5C6HE4SFqjTPdOxbl0U",
       caption: "2 medium Apple",
-      image: "https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=500&h=300&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=500&h=300&fit=crop",
       hashtag: "#Breakfast",
       time: "22 Jul at 5:40 pm",
       likes: 3,
@@ -18,8 +20,10 @@ const Feeds = () => {
     {
       id: 2,
       name: "Sharad",
-      avatar: "https://media.licdn.com/dms/image/v2/D4D03AQGOuQhk51X1Vw/profile-displayphoto-crop_800_800/B4DZgoPRUbGgAM-/0/1753021751126?e=1756339200&v=beta&t=RQwIwTcQaE78V1_K4Il8HNNU5C6HE4SFqjTPdOxbl0U",
-      caption: "Successfully activated my GOQii band! Tap to wake feature is amazing ⌚",
+      avatar:
+        "https://media.licdn.com/dms/image/v2/D4D03AQGOuQhk51X1Vw/profile-displayphoto-crop_800_800/B4DZgoPRUbGgAM-/0/1753021751126?e=1756339200&v=beta&t=RQwIwTcQaE78V1_K4Il8HNNU5C6HE4SFqjTPdOxbl0U",
+      caption:
+        "Successfully activated my GOQii band! Tap to wake feature is amazing ⌚",
       image: "https://goqii.com/goqiiIndia/startupguide.html",
       hashtag: "#GOQiiBand",
       time: "22 Jul at 6:00 pm",
@@ -30,8 +34,10 @@ const Feeds = () => {
     {
       id: 3,
       name: "Sharad",
-      avatar: "https://media.licdn.com/dms/image/v2/D4D03AQGOuQhk51X1Vw/profile-displayphoto-crop_800_800/B4DZgoPRUbGgAM-/0/1753021751126?e=1756339200&v=beta&t=RQwIwTcQaE78V1_K4Il8HNNU5C6HE4SFqjTPdOxbl0U",
-      caption: "Linked my GOQii band with mobile app via Bluetooth. Health tracking started! 📱",
+      avatar:
+        "https://media.licdn.com/dms/image/v2/D4D03AQGOuQhk51X1Vw/profile-displayphoto-crop_800_800/B4DZgoPRUbGgAM-/0/1753021751126?e=1756339200&v=beta&t=RQwIwTcQaE78V1_K4Il8HNNU5C6HE4SFqjTPdOxbl0U",
+      caption:
+        "Linked my GOQii band with mobile app via Bluetooth. Health tracking started! 📱",
       image: "https://goqii.com/goqiiIndia/startupguide.html",
       hashtag: "#BluetoothLink",
       time: "22 Jul at 6:30 pm",
@@ -42,8 +48,10 @@ const Feeds = () => {
     {
       id: 4,
       name: "Sharad",
-      avatar: "https://media.licdn.com/dms/image/v2/D4D03AQGOuQhk51X1Vw/profile-displayphoto-crop_800_800/B4DZgoPRUbGgAM-/0/1753021751126?e=1756339200&v=beta&t=RQwIwTcQaE78V1_K4Il8HNNU5C6HE4SFqjTPdOxbl0U",
-      caption: "Donated 2500 karma points to a great cause! It feels amazing to give back ❤️",
+      avatar:
+        "https://media.licdn.com/dms/image/v2/D4D03AQGOuQhk51X1Vw/profile-displayphoto-crop_800_800/B4DZgoPRUbGgAM-/0/1753021751126?e=1756339200&v=beta&t=RQwIwTcQaE78V1_K4Il8HNNU5C6HE4SFqjTPdOxbl0U",
+      caption:
+        "Donated 2500 karma points to a great cause! It feels amazing to give back ❤️",
       image: "https://goqii.com/goqiiIndia/startupguide.html",
       hashtag: "#KarmaPoints",
       time: "22 Jul at 7:00 pm",
@@ -54,8 +62,10 @@ const Feeds = () => {
     {
       id: 5,
       name: "Sharad",
-      avatar: "https://media.licdn.com/dms/image/v2/D4D03AQGOuQhk51X1Vw/profile-displayphoto-crop_800_800/B4DZgoPRUbGgAM-/0/1753021751126?e=1756339200&v=beta&t=RQwIwTcQaE78V1_K4Il8HNNU5C6HE4SFqjTPdOxbl0U",
-      caption: "Completed Health Risk Assessment. My health locker is now updated! 🏥",
+      avatar:
+        "https://media.licdn.com/dms/image/v2/D4D03AQGOuQhk51X1Vw/profile-displayphoto-crop_800_800/B4DZgoPRUbGgAM-/0/1753021751126?e=1756339200&v=beta&t=RQwIwTcQaE78V1_K4Il8HNNU5C6HE4SFqjTPdOxbl0U",
+      caption:
+        "Completed Health Risk Assessment. My health locker is now updated! 🏥",
       image: "https://goqii.com/goqiiIndia/startupguide.html",
       hashtag: "#HealthAssessment",
       time: "22 Jul at 7:30 pm",
@@ -66,7 +76,7 @@ const Feeds = () => {
   ];
 
   const repeatedFeeds = [];
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i < 10; i++) {
     mockFeeds.forEach((feed, index) => {
       repeatedFeeds.push({
         ...feed,
@@ -79,7 +89,7 @@ const Feeds = () => {
   return (
     <div className="feeds-container">
       <h3 className="feeds-title">GOQii Activity Feed</h3>
-      
+
       {repeatedFeeds.map((feed) => (
         <div className="feed-card" key={feed.id}>
           {/* Profile Header */}
@@ -98,7 +108,7 @@ const Feeds = () => {
               <span className="options-dots">⋮</span>
             </div>
           </div>
-          
+
           {/* Post Caption */}
           <div className="feed-caption">{feed.caption}</div>
 

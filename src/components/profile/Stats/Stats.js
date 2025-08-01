@@ -17,19 +17,19 @@ const ProfileStats = ({ stats }) => {
     <section className="stats-section">
       {/* Steps count */}
       <div className="stats-box">
-        <span className="stats-value">{dataUtils.formatSteps(stats.steps)}</span>
+        <span className="stats-value">{stats.steps}</span>
         <span className="stats-label">Steps</span>
       </div>
-      
+
       {/* Friends count */}
       <div className="stats-box">
-        <span className="stats-value">{dataUtils.formatNumber(stats.friends)}</span>
+        <span className="stats-value">{stats.friends}</span>
         <span className="stats-label">Friends</span>
       </div>
-      
+
       {/* Followers count */}
       <div className="stats-box">
-        <span className="stats-value">{dataUtils.formatNumber(stats.followers)}</span>
+        <span className="stats-value">{stats.followers}</span>
         <span className="stats-label">Followers</span>
       </div>
     </section>

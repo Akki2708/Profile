@@ -51,7 +51,9 @@ export const ProfileHeader = ({ profileData }) => {
       {/* Success message */}
       {showMessage && (
         <div className="success-message">
-          {isFollowing ? MESSAGES.SUCCESS.FOLLOW_SUCCESS : MESSAGES.SUCCESS.FRIEND_REQUEST_SENT}
+          {isFollowing
+            ? MESSAGES.SUCCESS.FOLLOW_SUCCESS
+            : MESSAGES.SUCCESS.FRIEND_REQUEST_SENT}
         </div>
       )}
 
@@ -67,7 +69,9 @@ export const ProfileHeader = ({ profileData }) => {
 
         {/* Top navigation */}
         <div className="top-row">
-          <span className="icon" onClick={() => navigate(-1)}>&#8592;</span>
+          <span className="icon" onClick={() => navigate(-1)}>
+            &#8592;
+          </span>
           <span className="icon">&#8942;</span>
         </div>
 
@@ -80,20 +84,19 @@ export const ProfileHeader = ({ profileData }) => {
               alt={`${apiData.fullName}'s profile`}
               className="avatar"
               onError={(e) => {
-                e.target.style.display = 'none';
+                e.target.style.display = "none";
               }}
             />
             {/* Badge */}
             {apiData.profileBadge && (
               <div className="badge-row">
                 <span className="badge-base insure-badge">
-                  <MdVerified size={14} color="#ffb300" />
                   <img
                     src={apiData.profileBadge}
                     alt="Badge"
                     className="badge-image"
                     onError={(e) => {
-                      e.target.style.display = 'none';
+                      e.target.style.display = "none";
                     }}
                   />
                 </span>
