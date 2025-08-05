@@ -1,12 +1,3 @@
-// API Configuration
-export const API_CONFIG = {
-  BASE_URL: "https://intern-api.goqii.com/insurance",
-  TIMEOUT: 10000,
-  ENDPOINTS: {
-    FETCH_GOQII_FRIEND: "/fetch_goqii_friend",
-  },
-};
-
 // UI Messages
 export const MESSAGES = {
   LOADING: {
@@ -29,13 +20,6 @@ export const MESSAGES = {
 export const TIMEOUTS = {
   MESSAGE_DISPLAY: 3000,
   API_REQUEST: 10000,
-};
-
-// Number formatting
-export const FORMATTING = {
-  MILLION_THRESHOLD: 1000000,
-  THOUSAND_THRESHOLD: 1000,
-  DECIMAL_PLACES: 1,
 };
 
 // Routes
@@ -68,4 +52,4 @@ export const COLORS = {
     MEDIUM: "#ccc",
     DARK: "#666",
   },
-}; 
+};

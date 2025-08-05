@@ -1,10 +1,9 @@
 import React from "react";
-import { dataUtils } from "../../../services/api";
+import { utils } from "../../../apiservices/api";
 import { MESSAGES } from "../../../constants";
 import "./Stats.css";
 
 const ProfileStats = ({ stats }) => {
-  // Show loading if no stats
   if (!stats) {
     return (
       <section className="stats-section">
@@ -15,21 +14,20 @@ const ProfileStats = ({ stats }) => {
 
   return (
     <section className="stats-section">
-      {/* Steps count */}
       <div className="stats-box">
         <span className="stats-value">{stats.steps}</span>
         <span className="stats-label">Steps</span>
       </div>
 
-      {/* Friends count */}
       <div className="stats-box">
         <span className="stats-value">{stats.friends}</span>
         <span className="stats-label">Friends</span>
       </div>
 
-      {/* Followers count */}
       <div className="stats-box">
-        <span className="stats-value">{stats.followers}</span>
+        <span className="stats-value">
+          {utils.formatNumber(stats.followers)}
+        </span>
         <span className="stats-label">Followers</span>
       </div>
     </section>

@@ -101,42 +101,45 @@
 }
 
 .title.loading {
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
 .tagline {
-  color: #444;
-  font-size: 1rem;
-  margin: 2px 0 0 0;
+  font-size: 0.95rem;
+  color: #666;
+  margin: 4px 0 0 0;
+  font-weight: 500;
+  word-wrap: break-word;
+  width: 100%;
+  line-height: 1.4;
+}
+
+.joined {
+  font-size: 0.85rem;
+  color: #888;
+  margin: 4px 0 0 0;
+  font-weight: 400;
+}
+
+.location {
+  font-size: 0.9rem;
+  color: #777;
+  margin: 4px 0 0 0;
   font-weight: 500;
   word-wrap: break-word;
   width: 100%;
 }
 
-.joined {
-  color: #888;
-  font-size: 0.9rem;
-  margin: 2px 0 0 0;
-  word-wrap: break-word;
-  width: 100%;
-}
-
-.location {
-  color: #888;
-  font-size: 0.9rem;
-  margin: 2px 0 0 0;
-  margin-bottom: 2px;
-  word-wrap: break-word;
-  width: 100%;
-}
-
 .icon {
-  font-size: 1.6rem;
-  color: #444;
+  font-size: 1.5rem;
+  color: #fff;
   cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.3);
+  transition: background 0.2s ease;
 }
 
-/* ProfileActions styles */
 .actions-container {
   display: flex;
   justify-content: center;
@@ -149,6 +152,7 @@
   flex-wrap: wrap;
   position: relative;
   box-sizing: border-box;
+  border-top: 1px solid #e0e0e0;
 }
 
 .base-button {
@@ -158,10 +162,17 @@
   border-radius: 999px;
   font-weight: 700;
   transition: background 0.2s ease-in-out, color 0.2s ease-in-out,
-    border 0.2s ease-in-out;
+    border 0.2s ease-in-out, transform 0.2s ease-in-out;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   flex: 1;
   max-width: 200px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.base-button:active {
+  transform: scale(0.98);
 }
 
 .chat-button {
@@ -174,6 +185,7 @@
 .chat-button:hover {
   background: #6dd400;
   color: #fff;
+  border-color: #6dd400;
 }
 
 .follow-button {
@@ -239,7 +251,7 @@
 
   .actions-container {
     gap: 16px;
-    padding: 24px 16px 20px 16px;
+    padding: 24px 12px 20px 12px;
   }
 
   .base-button {
@@ -261,7 +273,6 @@
 
   .main-content {
     padding: 0 12px;
-    margin-top: -15px;
   }
 
   .title {
@@ -269,21 +280,19 @@
   }
 
   .tagline,
-  .joined,
   .location {
     font-size: 0.85rem;
   }
 
   .actions-container {
     gap: 12px;
-    padding: 20px 12px 16px 12px;
+    padding: 20px 8px 16px 8px;
   }
 
   .base-button {
     min-width: 120px;
-    padding: 12px 24px;
-    font-size: 1rem;
-    max-width: 150px;
+    padding: 14px 24px;
+    font-size: 1.1rem;
   }
 
   .top-row {
@@ -291,18 +300,19 @@
   }
 
   .icon {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    padding: 6px;
   }
 }
 
 @media (max-width: 360px) {
   .actions-container {
     flex-direction: column;
-    align-items: center;
+    gap: 12px;
   }
 
   .base-button {
+    max-width: none;
     width: 100%;
-    max-width: 200px;
   }
 }

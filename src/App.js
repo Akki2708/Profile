@@ -1,20 +1,16 @@
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
+// import "./styles/App.css";
 import "./styles/App.css";
 import AppRoutes from "./routes/AppRoutes";
-import useProfileData from "./hooks/useProfileData";
+import { useData } from "./apiservices/useData";
 
 function App() {
-  const { profileData, stats, loading, error } = useProfileData();
+  const { data, loading, stats } = useData();
 
   return (
     <Router>
-      <AppRoutes
-        profileData={profileData}
-        stats={stats}
-        loading={loading}
-        error={error}
-      />
+      <AppRoutes profileData={data} stats={stats} loading={loading} />
     </Router>
   );
 }

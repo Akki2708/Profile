@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { MdVerified } from "react-icons/md";
-import { dataUtils } from "../../../services/api";
+import { utils } from "../../../apiservices/api";
 import { MESSAGES, TIMEOUTS } from "../../../constants";
 import "./ProfileHeader.css";
 import profile_bg from "../../../images/profile_bg.jpeg";
@@ -11,40 +10,24 @@ export const ProfileHeader = ({ profileData }) => {
   const apiData = profileData?.data?.data;
   const isLoading = !apiData;
 
-  // Follow state
-  const [isFollowing, setIsFollowing] = useState(apiData?.followStatus === "1");
+  // Follow state - independent of API
+  const [isFollowing, setIsFollowing] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
 
-  // Update follow state when API data changes
-  useEffect(() => {
-    if (apiData?.followStatus !== undefined) {
-      setIsFollowing(apiData.followStatus === "1");
-    }
-  }, [apiData]);
-
-  // Handle follow button click
+  // Handle follow button click - no API dependency
   const handleFollowClick = () => {
     setIsFollowing((prev) => !prev);
     setShowMessage(true);
     setTimeout(() => setShowMessage(false), TIMEOUTS.MESSAGE_DISPLAY);
   };
 
-  // Handle chat button click
+  // Handle chat button click - no API dependency
   const handleChatClick = () => {
     navigate("/chat");
   };
 
   // Build location string
-  const location = dataUtils.buildLocation(apiData);
-
-  // Show loading state
-  if (isLoading) {
-    return (
-      <div className="profile-header">
-        <div className="loader">{MESSAGES.LOADING.PROFILE}</div>
-      </div>
-    );
-  }
+  const location = utils.buildLocation(apiData);
 
   return (
     <>
@@ -63,7 +46,7 @@ export const ProfileHeader = ({ profileData }) => {
         <div
           className="background-image-container"
           style={{
-            backgroundImage: `url(${apiData.userCoverImage || profile_bg})`,
+            backgroundImage: `url(${apiData?.userCoverImage || profile_bg})`,
           }}
         ></div>
 
@@ -80,15 +63,18 @@ export const ProfileHeader = ({ profileData }) => {
           {/* Avatar section */}
           <div className="avatar-wrapper">
             <img
-              src={apiData.userImage}
-              alt={`${apiData.fullName}'s profile`}
+              src={
+                apiData?.userImage ||
+                "https://via.placeholder.com/100x100?text=User"
+              }
+              alt={`${apiData?.fullName || "User"}'s profile`}
               className="avatar"
               onError={(e) => {
-                e.target.style.display = "none";
+                e.target.src = "https://via.placeholder.com/100x100?text=User";
               }}
             />
             {/* Badge */}
-            {apiData.profileBadge && (
+            {apiData?.profileBadge && (
               <div className="badge-row">
                 <span className="badge-base insure-badge">
                   <img
@@ -106,28 +92,15 @@ export const ProfileHeader = ({ profileData }) => {
 
           {/* User details */}
           <div className="details">
-            <h2 className="title">{apiData.fullName}</h2>
-            {apiData.userBio && <p className="tagline">{apiData.userBio}</p>}
+            <h2 className="title">{apiData?.fullName || "User Profile"}</h2>
+            {apiData?.userBio && <p className="tagline">{apiData.userBio}</p>}
             {location && <p className="location">{location}</p>}
-            {apiData.joinedSince && (
+            {apiData?.joinedSince && (
               <p className="joined">Joined {apiData.joinedSince}</p>
             )}
           </div>
         </div>
       </header>
-
-      {/* Action buttons */}
-      <div className="actions-container">
-        <button className="base-button chat-button" onClick={handleChatClick}>
-          Chat
-        </button>
-        <button
-          className="base-button follow-button"
-          onClick={handleFollowClick}
-        >
-          {isFollowing ? "Following" : apiData.followTitle || "Follow"}
-        </button>
-      </div>
     </>
   );
 };

@@ -1,4 +1,4 @@
-/* Feeds.css */
+/* ✅ Feeds Container */
 .feeds-container {
   padding: 12px;
   background-color: #f9f9f9;
@@ -17,6 +17,7 @@
   padding: 0 4px;
 }
 
+/* ✅ Feed Card */
 .feed-card {
   background-color: #fff;
   border-radius: 8px;
@@ -25,18 +26,17 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   width: 100%;
   box-sizing: border-box;
-  border: none;
 }
 
-/* Profile Header */
+/* ✅ Feed Header */
 .feed-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 12px;
-  width: 100%;
 }
 
+/* ✅ User Info */
 .user-info {
   display: flex;
   align-items: flex-start;
@@ -51,7 +51,6 @@
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
-  border: none;
 }
 
 .user-details {
@@ -66,9 +65,7 @@
   font-size: 0.95rem;
   color: #222;
   font-weight: 600;
-  word-wrap: break-word;
   line-height: 1.2;
-  margin: 0;
 }
 
 .user-badge {
@@ -87,14 +84,12 @@
   font-weight: 500;
 }
 
+/* ✅ Feed Options */
 .feed-options {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative; /* Needed for .report-dropdown absolute positioning */
   width: 20px;
   height: 20px;
   cursor: pointer;
-  margin-top: 2px;
 }
 
 .options-dots {
@@ -103,28 +98,26 @@
   font-weight: bold;
 }
 
-/* Post Caption */
+/* ✅ Caption */
 .feed-caption {
   font-size: 0.95rem;
   margin-bottom: 12px;
   color: #111;
-  word-wrap: break-word;
   line-height: 1.4;
-  width: 100%;
-  font-weight: 400;
 }
 
-/* Post Image */
+/* ✅ Image */
 .feed-image {
   width: 100%;
   height: auto;
+  aspect-ratio: 4 / 3;
   border-radius: 8px;
   margin-bottom: 12px;
   object-fit: cover;
-  max-height: 250px;
+  max-height: 300px;
 }
 
-/* Hashtag and Time */
+/* ✅ Hashtag + Time */
 .hashtag-time {
   display: flex;
   align-items: center;
@@ -132,9 +125,6 @@
   font-size: 0.85rem;
   color: #666;
   margin-bottom: 8px;
-  word-wrap: break-word;
-  line-height: 1.3;
-  width: 100%;
   flex-wrap: wrap;
 }
 
@@ -156,7 +146,7 @@
   color: #666;
 }
 
-/* Engagement Summary */
+/* ✅ Engagement */
 .engagement-summary {
   display: flex;
   gap: 12px;
@@ -164,7 +154,6 @@
   color: #666;
   margin-bottom: 8px;
   padding-bottom: 8px;
-  /* border-bottom: 1px solid #f0f0f0; */
 }
 
 .likes-count,
@@ -172,13 +161,14 @@
   color: #666;
 }
 
-/* Action Buttons */
+/* ✅ Feed Actions */
 .feed-actions {
   display: flex;
   gap: 0;
   width: 100%;
   border-top: 1px solid #f0f0f0;
   padding-top: 8px;
+  flex-wrap: wrap;
 }
 
 .action-button {
@@ -198,12 +188,9 @@
   border-radius: 6px;
 }
 
-.action-button:hover {
-  background-color: #f5f5f5;
-}
-
+.action-button:hover,
 .action-button:active {
-  background-color: #e8e8e8;
+  background-color: greenyellow;
 }
 
 .action-icon {
@@ -214,7 +201,26 @@
   font-weight: 500;
 }
 
-/* Mobile responsive design */
+/* ✅ Report Dropdown */
+.report-dropdown {
+  position: absolute;
+  top: 24px;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 6px 12px;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.report-option {
+  color: black;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* ✅ Media Queries */
 @media (max-width: 768px) {
   .feeds-container {
     padding: 10px;
@@ -222,13 +228,10 @@
 
   .feeds-title {
     font-size: 1.2rem;
-    margin-bottom: 12px;
   }
 
   .feed-card {
     padding: 14px;
-    margin-bottom: 10px;
-    border-radius: 8px;
   }
 
   .user-avatar {
@@ -236,18 +239,14 @@
     height: 34px;
   }
 
-  .user-name {
-    font-size: 0.9rem;
-  }
-
+  .user-name,
   .feed-caption {
     font-size: 0.9rem;
-    margin-bottom: 10px;
   }
 
   .action-button {
-    padding: 8px 6px;
     font-size: 0.85rem;
+    padding: 8px 6px;
   }
 
   .hashtag-time {
@@ -255,62 +254,13 @@
   }
 }
 
-@media (max-width: 480px) {
-  .feeds-container {
-    padding: 8px;
-  }
-
-  .feeds-title {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-  }
-
-  .feed-card {
-    padding: 12px;
-    margin-bottom: 8px;
-    border-radius: 6px;
-  }
-
-  .user-avatar {
-    width: 32px;
-    height: 32px;
-  }
-
-  .user-name {
-    font-size: 0.85rem;
-  }
-
-  .feed-caption {
-    font-size: 0.85rem;
-    margin-bottom: 8px;
-  }
-
-  .action-button {
-    padding: 8px 6px;
-    font-size: 0.8rem;
-  }
-
-  .hashtag-time {
-    font-size: 0.75rem;
-  }
-
-  .engagement-summary {
-    font-size: 0.75rem;
-  }
-
-  .action-icon {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 360px) {
+@media (max-width: 560px) {
   .feeds-container {
     padding: 6px;
   }
 
   .feed-card {
     padding: 10px;
-    margin-bottom: 6px;
   }
 
   .user-avatar {
@@ -318,34 +268,25 @@
     height: 30px;
   }
 
-  .user-name {
-    font-size: 0.8rem;
-  }
-
+  .user-name,
   .feed-caption {
     font-size: 0.8rem;
   }
 
   .action-button {
-    padding: 6px 4px;
     font-size: 0.75rem;
+    padding: 6px 4px;
   }
 
   .action-icon {
     font-size: 0.85rem;
   }
 
-  .hashtag-time {
-    font-size: 0.7rem;
-  }
-
+  .hashtag-time,
   .engagement-summary {
     font-size: 0.7rem;
   }
-}
 
-/* Extra small devices */
-@media (max-width: 320px) {
   .feed-actions {
     flex-direction: column;
     gap: 2px;
@@ -355,4 +296,41 @@
     justify-content: center;
     padding: 6px;
   }
+}
+
+/* ✅ Active Like Button Styles */
+.action-button.active {
+  background-color: #d4edda !important;
+  color: #2e7d32 !important;
+}
+
+.action-button.active .action-icon {
+  color: #2e7d32 !important;
+}
+/* ✅ Image Modal */
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.image-modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.image-modal-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
