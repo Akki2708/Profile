@@ -208,15 +208,13 @@
   right: 0;
   background: white;
   border: 1px solid #ccc;
-  border-radius: 6px;
-  padding: 6px 12px;
+  padding: 15px 70px;
   z-index: 10;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .report-option {
   color: black;
-  font-size: 14px;
+  font-size: 15px;
   cursor: pointer;
 }
 
@@ -315,11 +313,12 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: rgba(60, 52, 52, 0.95);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
+  opacity: 3;
 }
 
 .image-modal-content {
@@ -328,8 +327,11 @@
   max-height: 90%;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(12, 12, 12, 0.3);
-  background: #000; /* keeps background behind image dark */
+  box-shadow: 0 4px 20px rgba(226, 223, 223, 0.3);
+  /* box-shadow: #ffffff; */
+  background: #947474; /* keeps background behind image dark */
+  /* z-index: 1000; */
+  opacity: 1;
 }
 
 .image-modal-content img {
@@ -343,9 +345,9 @@
 .back-button {
   position: absolute;
   top: 12px;
-  left: 12px;
+  right: 12px;
   background: rgba(255, 255, 255, 0.9);
-  color: #000;
+  color: #756767;
   border: none;
   padding: 8px 12px;
   border-radius: 6px;
