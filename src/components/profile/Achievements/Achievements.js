@@ -5,7 +5,7 @@ const achievementsData = [
   {
     id: 1,
     title: "GOQii Band Master",
-    shortTitle: "GOQii Band Master...",
+    shortTitle: "GOQii Band ...",
     month: "BAND",
     type: "MASTER",
     color: "#6dd400",
