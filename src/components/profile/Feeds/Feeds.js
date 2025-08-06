@@ -258,7 +258,7 @@ import {
   faThumbsUp,
   faComment,
   faEllipsisV,
-  faArrowLeft,
+  faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import "./Feeds.css";
@@ -346,7 +346,7 @@ const Feeds = () => {
       repeatedFeeds.push({
         ...feed,
         id: feed.id + i * mockFeeds.length,
-        time: `${feed.time} (${i + 1})`,
+        time: feed.time, // ✅ no numbering here
       });
     });
   }
@@ -517,7 +517,7 @@ const Feeds = () => {
               onClick={() => setSelectedImage(null)}
               aria-label="Close image"
             >
-              <FontAwesomeIcon icon={faArrowLeft} />
+              <FontAwesomeIcon icon={faTimes} />
             </button>
             <img src={selectedImage} alt="Enlarged" />
           </div>

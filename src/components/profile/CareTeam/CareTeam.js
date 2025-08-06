@@ -66,7 +66,7 @@ const CareTeam = () => {
   return (
     <section className="care-team-section">
       {/* Header */}
-      <h4 className="care-team-heading">GOQii Care Team</h4>
+      <h4 className="care-team-heading">Care Team</h4>
 
       {/* Team members */}
       <div className="team-members">
