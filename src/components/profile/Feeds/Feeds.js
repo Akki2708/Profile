@@ -6,6 +6,7 @@
 //   faThumbsUp,
 //   faComment,
 //   faEllipsisV,
+//   faArrowLeft,
 // } from "@fortawesome/free-solid-svg-icons";
 // import { useNavigate } from "react-router-dom";
 // import "./Feeds.css";
@@ -86,6 +87,7 @@
 //     },
 //   ];
 
+//   // repeat to simulate longer list
 //   const repeatedFeeds = [];
 //   for (let i = 0; i < 2; i++) {
 //     mockFeeds.forEach((feed) => {
@@ -102,6 +104,7 @@
 //   );
 
 //   const [openReportId, setOpenReportId] = useState(null);
+//   const [selectedImage, setSelectedImage] = useState(null);
 
 //   useEffect(() => {
 //     const handleClickOutside = () => {
@@ -178,7 +181,13 @@
 //           <div className="feed-caption">{feed.caption}</div>
 
 //           {feed.image && (
-//             <img src={feed.image} alt="Post content" className="feed-image" />
+//             <img
+//               src={feed.image}
+//               alt="Post content"
+//               className="feed-image"
+//               onClick={() => setSelectedImage(feed.image)}
+//               style={{ cursor: "pointer" }}
+//             />
 //           )}
 
 //           {feed.hashtag && (
@@ -215,6 +224,25 @@
 //           </div>
 //         </div>
 //       ))}
+
+//       {/* Image Modal */}
+//       {selectedImage && (
+//         <div className="image-modal" onClick={() => setSelectedImage(null)}>
+//           <div
+//             className="image-modal-content"
+//             onClick={(e) => e.stopPropagation()}
+//           >
+//             <button
+//               className="back-button"
+//               onClick={() => setSelectedImage(null)}
+//               aria-label="back-button"
+//             >
+//               <FontAwesomeIcon icon={faArrowLeft} />
+//             </button>
+//             <img src={selectedImage} alt="Enlarged" />
+//           </div>
+//         </div>
+//       )}
 //     </div>
 //   );
 // };
@@ -222,7 +250,6 @@
 // export default Feeds;
 
 // !.....................................................................................................//
-
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -231,6 +258,7 @@ import {
   faThumbsUp,
   faComment,
   faEllipsisV,
+  faArrowLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import "./Feeds.css";
@@ -311,6 +339,7 @@ const Feeds = () => {
     },
   ];
 
+  // repeat to simulate longer list
   const repeatedFeeds = [];
   for (let i = 0; i < 2; i++) {
     mockFeeds.forEach((feed) => {
@@ -329,6 +358,7 @@ const Feeds = () => {
   const [openReportId, setOpenReportId] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
 
+  // -- Close report dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = () => {
       setOpenReportId(null);
@@ -338,6 +368,28 @@ const Feeds = () => {
       document.removeEventListener("click", handleClickOutside);
     };
   }, []);
+
+  // -- Prevent body scroll while modal is open and add Esc key support
+  useEffect(() => {
+    const originalOverflow = document.body.style.overflow || "";
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") setSelectedImage(null);
+    };
+
+    if (selectedImage) {
+      document.body.style.overflow = "hidden"; // disable body scroll
+      document.addEventListener("keydown", handleKeyDown);
+    } else {
+      document.body.style.overflow = originalOverflow; // restore
+      document.removeEventListener("keydown", handleKeyDown);
+    }
+
+    // cleanup on unmount
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [selectedImage]);
 
   const handleCommentClick = (feedId) => {
     navigate(`/likes-comments/${feedId}`);
@@ -444,18 +496,29 @@ const Feeds = () => {
               <FontAwesomeIcon icon={faComment} className="action-icon" />
               <span className="action-text">Comment</span>
             </button>
-            <button className="action-button share-button">Share</button>
           </div>
         </div>
       ))}
 
       {/* Image Modal */}
       {selectedImage && (
-        <div className="image-modal" onClick={() => setSelectedImage(null)}>
+        <div
+          className="image-modal"
+          onClick={() => setSelectedImage(null)}
+          role="dialog"
+          aria-modal="true"
+        >
           <div
             className="image-modal-content"
             onClick={(e) => e.stopPropagation()}
           >
+            <button
+              className="back-button"
+              onClick={() => setSelectedImage(null)}
+              aria-label="Close image"
+            >
+              <FontAwesomeIcon icon={faArrowLeft} />
+            </button>
             <img src={selectedImage} alt="Enlarged" />
           </div>
         </div>

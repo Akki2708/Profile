@@ -118,6 +118,29 @@
   white-space: nowrap;
   font-weight: 500;
 }
+.achievements-scroll {
+  display: flex;
+  flex-wrap: nowrap; /* keep items in one line */
+  overflow-x: auto; /* allow horizontal scrolling */
+  gap: 12px;
+  padding-bottom: 10px;
+  box-sizing: border-box;
+  scroll-snap-type: x mandatory; /* optional smooth snapping */
+
+  /* Hide scrollbar for all browsers */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.achievements-scroll::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.achievement-badge {
+  flex-shrink: 0;
+  width: 120px; /* fixed width */
+  scroll-snap-align: start; /* optional */
+}
 
 /* Mobile responsive design */
 @media (max-width: 768px) {

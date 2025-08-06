@@ -138,6 +138,7 @@
 // export default LikeAndComments;
 
 // src/components/profile/LikeAndComments/LikeAndComments.js
+
 import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./LikeAndComments.css";

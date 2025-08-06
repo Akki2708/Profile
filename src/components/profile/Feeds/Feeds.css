@@ -1,4 +1,4 @@
-/* ✅ Feeds Container */
+/*  Feeds Container */
 .feeds-container {
   padding: 12px;
   background-color: #f9f9f9;
@@ -307,6 +307,7 @@
 .action-button.active .action-icon {
   color: #2e7d32 !important;
 }
+
 /* ✅ Image Modal */
 .image-modal {
   position: fixed;
@@ -314,7 +315,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.95);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -322,15 +323,41 @@
 }
 
 .image-modal-content {
+  position: relative; /* needed for absolute-positioned back button */
   max-width: 90%;
   max-height: 90%;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(12, 12, 12, 0.3);
+  background: #000; /* keeps background behind image dark */
 }
 
 .image-modal-content img {
   width: 100%;
   height: auto;
   border-radius: 8px;
+  display: block;
+}
+
+/* Back button inside modal */
+.back-button {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #000;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 1);
 }

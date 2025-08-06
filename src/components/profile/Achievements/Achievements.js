@@ -53,7 +53,7 @@ const Achievements = () => {
   return (
     <div className="achievements-container">
       <div className="achievements-header">
-        <h3 className="achievements-title">GOQii Achievements (5)</h3>
+        <h3 className="achievements-title">Achievements (5)</h3>
         <a href="" className="view-all-link">
           View all
         </a>
