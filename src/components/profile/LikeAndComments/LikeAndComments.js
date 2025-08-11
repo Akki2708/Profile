@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./LikeAndComments.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 
 const initialLikes = [
   { name: "You", avatar: "", id: 1 },
@@ -47,13 +49,15 @@ const initialComments = [
       "https://d2v5dzhdg4zhx3.cloudfront.net/web-assets/images/storypages/short/linkedin-profile-picture-maker/dummy_image/thumb/004.webp",
   },
 ];
-
 const LikeAndComments = () => {
   const { feedId } = useParams();
   const navigate = useNavigate();
-
   const [comments, setComments] = useState(initialComments);
   const [inputText, setInputText] = useState("");
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleQuickReply = (message) => {
     setComments((prev) => [
@@ -75,11 +79,11 @@ const LikeAndComments = () => {
   };
 
   return (
-    <div className="like-comments-page">
+    <div className="like-comments-page slide-up-animation">
       {/* Header */}
       <div className="header">
         <button onClick={() => navigate(-1)} className="back-button">
-          ←
+          <FontAwesomeIcon icon={faTimes} />
         </button>
         <h3>Likes & Comments</h3>
       </div>
@@ -130,7 +134,7 @@ const LikeAndComments = () => {
         ))}
       </div>
 
-      {/* Quick Replies + Comment Box (footer) */}
+      {/* Footer */}
       <div className="footer-section">
         <div className="quick-replies">
           <button onClick={() => handleQuickReply("Healthy 👍")}>
@@ -151,7 +155,9 @@ const LikeAndComments = () => {
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
           />
-          <button onClick={handleSend}>➔</button>
+          <button onClick={handleSend} className="send-button">
+            ➤
+          </button>
         </div>
       </div>
     </div>
